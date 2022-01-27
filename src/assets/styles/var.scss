@@ -1,0 +1,29 @@
+// $--color-primary: #08A440 !default;
+// $--font-size-base: 13px !default;
+// $--font-size-small: 14px !default; // 左侧导航，选中加粗，表头等正文级别的重要信息
+$--font-path: '~fant-ui/lib/theme-chalk/fonts';
+@import '~fant-ui/packages/theme-chalk/src/common/var';
+// @import '~fant-ui/packages/theme-chalk/src/index';
+@import './transition.scss';
+
+ /*滚动条样式*/
+::-webkit-scrollbar {
+  width: 10px;    
+  /*height: 4px;*/
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgba(121, 135, 158, 0.3);
+}
+::-webkit-scrollbar-track {
+  border-radius: 0;
+  background: rgba(136, 106, 106, 0.05);
+}
+.el-scrollbar__wrap {
+  box-sizing: content-box;
+}
+//svg图标初始化
+.svg-fill {
+  fill: currentColor;
+  stroke: none;
+}

@@ -1,0 +1,62 @@
+{
+  "name": "vue-template",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "vue-cli-service build --mode development",
+    "uat": "vue-cli-service build --mode uat",
+    "production": "vue-cli-service build --mode production",
+    "serve": "vue-cli-service serve",
+    "lint": "vue-cli-service lint",
+    "svg": "vsvg -s ./src/assets/icons/svg -t ./src/assets/icons/components --ext ts --es6"
+  },
+  "dependencies": {
+    "@types/nprogress": "^0.2.0",
+    "axios": "^0.19.2",
+    "core-js": "^3.10.2",
+    "fant-ui": "1.0.3",
+    "lint-staged": "^10.5.4",
+    "nprogress": "^0.2.0",
+    "vue": "^2.6.12",
+    "vue-class-component": "^7.2.6",
+    "vue-property-decorator": "^9.1.2",
+    "vue-router": "^3.5.1",
+    "vue-svgicon": "^3.2.9",
+    "vuex": "^3.6.2",
+    "vuex-class": "^0.3.2",
+    "vuex-persistedstate": "^3.2.0",
+    "wangeditor": "^3.1.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.33.0",
+    "@typescript-eslint/parser": "^2.33.0",
+    "@vue/cli-plugin-babel": "^4.4.4",
+    "@vue/cli-plugin-eslint": "^4.4.4",
+    "@vue/cli-plugin-router": "^4.4.4",
+    "@vue/cli-plugin-typescript": "^4.4.4",
+    "@vue/cli-plugin-vuex": "^4.4.4",
+    "@vue/cli-service": "^4.4.4",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "@vue/eslint-config-typescript": "^7.0.0",
+    "compression-webpack-plugin": "^7.1.2",
+    "cross-env": "^7.0.3",
+    "eslint": "^6.7.2",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-vue": "^6.2.2",
+    "mockjs": "^1.1.0",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^9.0.3",
+    "typescript": "^4.2.4",
+    "vue-template-compiler": "^2.6.12",
+    "webpack-bundle-analyzer": "^4.4.1"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,vue,ts,tsx}": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  }
+}
