@@ -1,15 +1,15 @@
-import Vue from "vue";
-import Vuex, { Commit } from "vuex";
-import { asyncRoutes } from "@/router";
-import { RouteConfig } from "vue-router";
-import UserInfo from "@/model/login/UserInfo";
-import createPersistedState from "vuex-persistedstate";
+import Vue from 'vue'
+import Vuex, { Commit } from 'vuex'
+import { asyncRoutes } from '@/router'
+import { RouteConfig } from 'vue-router'
+import UserInfo from '@/model/login/UserInfo'
+import createPersistedState from 'vuex-persistedstate'
 
-Vue.use(Vuex);
+Vue.use(Vuex)
 export interface State {
-  permission: Nullable<string[]>; // 权限列表
-  userInfo: UserInfo; // 用户信息
-  routes: RouteConfig[]; // 路由列表
+  permission: Nullable<string[]> // 权限列表
+  userInfo: UserInfo // 用户信息
+  routes: RouteConfig[] // 路由列表
 }
 
 export default new Vuex.Store({
@@ -19,7 +19,7 @@ export default new Vuex.Store({
       reducer(state) {
         return {
           userInfo: state.userInfo // 配置只储存state中的userInfo
-        };
+        }
       }
     })
   ],
@@ -31,7 +31,7 @@ export default new Vuex.Store({
   mutations: {
     // 用户信息更新
     userInfo(state: State, userInfo: UserInfo) {
-      state.userInfo = userInfo;
+      state.userInfo = userInfo
     },
     /**
      * 提交路由
@@ -39,13 +39,13 @@ export default new Vuex.Store({
      * @param routes 路由
      */
     submitRoutes(state: State, routes: RouteConfig[]) {
-      state.routes = routes;
+      state.routes = routes
     },
     // 登出
     logout(state: State) {
-      state.permission = null;
-      state.userInfo = new UserInfo();
-      state.routes = [];
+      state.permission = null
+      state.userInfo = new UserInfo()
+      state.routes = []
     }
   },
   getters: {
@@ -54,13 +54,13 @@ export default new Vuex.Store({
      * @param state state
      */
     routes(state: State) {
-      return generateRoute(asyncRoutes);
+      return generateRoute(asyncRoutes)
     }
   },
   actions: {
     // 用户信息更新
     userInfo(context: { commit: Commit }, userInfo: UserInfo) {
-      context.commit("userInfo", userInfo);
+      context.commit('userInfo', userInfo)
     },
     /**
      * 提交路由
@@ -68,13 +68,13 @@ export default new Vuex.Store({
      * @param routes 路由
      */
     submitRoutes(context: { commit: Commit }) {
-      return new Promise(resolve => {
-        let routes: RouteConfig[] = [];
-        routes = generateRoute(asyncRoutes);
+      return new Promise((resolve) => {
+        let routes: RouteConfig[] = []
+        routes = generateRoute(asyncRoutes)
         // todo
-        context.commit("submitRoutes", routes);
-        resolve(routes);
-      });
+        context.commit('submitRoutes', routes)
+        resolve(routes)
+      })
     },
     /**
      * 提交路由
@@ -82,11 +82,11 @@ export default new Vuex.Store({
      * @param routes 路由
      */
     logout(context: { commit: Commit }) {
-      context.commit("logout");
+      context.commit('logout')
     }
   },
   modules: {}
-});
+})
 
 /**
  * 生成可用路由列表
@@ -94,8 +94,8 @@ export default new Vuex.Store({
 export function generateRoute(routes: RouteConfig[], parent?: RouteConfig) {
   for (let index = 0; index < routes.length; index++) {
     if (parent) {
-      console.log(parent);
+      console.log(parent)
     }
   }
-  return routes;
+  return routes
 }

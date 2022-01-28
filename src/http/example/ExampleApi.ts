@@ -1,8 +1,8 @@
-import ApiClient from "@/http/ApiClient";
-import BaseResponse from "@/model/common/BaseResponse";
-import ListModel from "@/model/example/ListModel";
-import LoginModel from "@/model/login/LoginModel";
-import UserInfo from "@/model/login/UserInfo";
+import ApiClient from '@/http/ApiClient'
+import BaseResponse from '@/model/common/BaseResponse'
+import ListModel from '@/model/example/ListModel'
+import LoginModel from '@/model/login/LoginModel'
+import UserInfo from '@/model/login/UserInfo'
 
 export default class ExampleApi {
   /**
@@ -11,30 +11,30 @@ export default class ExampleApi {
    */
   static login(body: LoginModel): Promise<BaseResponse<UserInfo>> {
     return ApiClient.server()
-      .post("/example/login", body, {})
-      .then(res => {
-        return res.data;
-      });
+      .post('/example/login', body, {})
+      .then((res) => {
+        return res.data
+      })
   }
   /**
    * 查询单据列表
    */
   static getList(applyDate: string): Promise<BaseResponse<ListModel[]>> {
     return ApiClient.server()
-      .post("/example/getList", { applyDate: applyDate }, {})
-      .then(res => {
-        return res.data;
-      });
+      .post('/example/getList', { applyDate: applyDate }, {})
+      .then((res) => {
+        return res.data
+      })
   }
   /**
    * 查询商品单据列表
    */
   static getSkuList(applyDate: string): Promise<BaseResponse<ListModel[]>> {
     return ApiClient.server()
-      .post("/example/getSkuList", { applyDate: applyDate }, {})
-      .then(res => {
-        return res.data;
-      });
+      .post('/example/getSkuList', { applyDate: applyDate }, {})
+      .then((res) => {
+        return res.data
+      })
   }
 
   /**
@@ -53,8 +53,8 @@ export default class ExampleApi {
           type: type
         }
       })
-      .then(res => {
-        return res.data;
-      });
+      .then((res) => {
+        return res.data
+      })
   }
 }

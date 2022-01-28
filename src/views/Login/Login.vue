@@ -6,14 +6,7 @@
         <div class="login-body-right-header"><img src="@/assets/img/pic_logo.png" /></div>
         <el-form class="login-form" ref="loginForm" :model="loginModel" label-width="0">
           <el-form-item prop="loginId">
-            <el-input
-              ref="loginId"
-              v-model="loginModel.loginId"
-              prefix-icon="iconfont ic-ui-user"
-              placeholder="请输入账户名"
-              clearable
-            >
-            </el-input>
+            <el-input ref="loginId" v-model="loginModel.loginId" prefix-icon="iconfont ic-ui-user" placeholder="请输入账户名" clearable></el-input>
           </el-form-item>
           <el-form-item prop="password">
             <el-input
@@ -23,8 +16,7 @@
               placeholder="请输入登录密码"
               type="password"
               clearable
-            >
-            </el-input>
+            ></el-input>
           </el-form-item>
           <el-form-item prop="code">
             <el-input ref="code" v-model="loginModel.code" placeholder="请输入验证码">
@@ -35,15 +27,7 @@
           </el-form-item>
           <span class="login-form-tips">{{ tips }}</span>
           <el-checkbox class="login-form-auto" v-model="autoLogin">5天内自动登录</el-checkbox>
-          <el-button
-            :disabled="disabled"
-            :loading="loading"
-            type="primary"
-            class="login-form-button"
-            ref="login"
-            @click="doLogin"
-            >登录
-          </el-button>
+          <el-button :disabled="disabled" :loading="loading" type="primary" class="login-form-button" ref="login" @click="doLogin">登录</el-button>
         </el-form>
       </div>
     </div>
@@ -64,7 +48,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("../../assets/img/common/img_login_bg.png");
+  background-image: url('../../assets/img/common/img_login_bg.png');
   background-repeat: no-repeat;
   background-size: cover;
   &-body {

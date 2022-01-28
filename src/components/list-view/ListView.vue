@@ -25,12 +25,7 @@
       @selection-change="doSelectionChange"
       @sort-change="doSortChange"
     >
-      <el-table-column
-        v-if="selectable"
-        type="selection"
-        :selectable="checkSelectable"
-        :reserve-selection="reserveSelection"
-      ></el-table-column>
+      <el-table-column v-if="selectable" type="selection" :selectable="checkSelectable" :reserve-selection="reserveSelection"></el-table-column>
       <slot></slot>
     </el-table>
     <el-pagination
@@ -43,8 +38,7 @@
       :total="total"
       @size-change="doSizeChange"
       @current-change="doPageChange"
-    >
-    </el-pagination>
+    ></el-pagination>
 
     <el-pagination
       class="pagination"
@@ -55,8 +49,7 @@
       :total="total"
       @size-change="doSizeChange"
       @current-change="doPageChange"
-    >
-    </el-pagination>
+    ></el-pagination>
   </div>
 </template>
 <script lang="ts" src="./ListView.ts"></script>
