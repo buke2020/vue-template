@@ -29,13 +29,7 @@
       <query-condition @search="doSearch" @reset="doReset">
         <template>
           <el-col :xs="{ span: 24 }" :sm="{ span: 24 }" :md="{ span: 12 }" :lg="{ span: 8 }" :xl="{ span: 6 }">
-            <el-date-picker
-              type="date"
-              ref="applyDate"
-              v-model="applyDate"
-              value-format="yyyy-MM-dd"
-              placeholder="申请时间"
-            ></el-date-picker>
+            <el-date-picker type="date" ref="applyDate" v-model="applyDate" value-format="yyyy-MM-dd" placeholder="申请时间"></el-date-picker>
           </el-col>
           <el-col :xs="{ span: 24 }" :sm="{ span: 24 }" :md="{ span: 12 }" :lg="{ span: 8 }" :xl="{ span: 6 }">
             <el-time-picker
@@ -45,8 +39,7 @@
                 selectableRange: '18:30:00 - 20:30:00'
               }"
               placeholder="任意时间点"
-            >
-            </el-time-picker>
+            ></el-time-picker>
           </el-col>
         </template>
       </query-condition>
@@ -54,22 +47,15 @@
     <!-- 列表查询条件 结束 -->
     <!-- 列表主体表格 开始 -->
     <template slot="body">
-      <list-view
-        ref="orderDataList"
-        :selectable="false"
-        :data="orderDataList"
-        :total="orderTotal"
-        @load="doListLoad"
-        v-loading="loading"
-      >
-        <el-table-column prop="flowNo" label="订单号"> </el-table-column>
-        <el-table-column prop="sysState" label="订单状态"> </el-table-column>
-        <el-table-column prop="type" label="订单类型"> </el-table-column>
-        <el-table-column prop="appId" label="下单渠道"> </el-table-column>
-        <el-table-column prop="memberInfo" label="客户信息"> </el-table-column>
-        <el-table-column prop="consignee" label="收货人信息"> </el-table-column>
-        <el-table-column prop="realAmount" label="下单金额（元）"> </el-table-column>
-        <el-table-column prop="created" label="下单时间"> </el-table-column>
+      <list-view ref="orderDataList" :selectable="false" :data="orderDataList" :total="orderTotal" @load="doListLoad" v-loading="loading">
+        <el-table-column prop="flowNo" label="订单号"></el-table-column>
+        <el-table-column prop="sysState" label="订单状态"></el-table-column>
+        <el-table-column prop="type" label="订单类型"></el-table-column>
+        <el-table-column prop="appId" label="下单渠道"></el-table-column>
+        <el-table-column prop="memberInfo" label="客户信息"></el-table-column>
+        <el-table-column prop="consignee" label="收货人信息"></el-table-column>
+        <el-table-column prop="realAmount" label="下单金额（元）"></el-table-column>
+        <el-table-column prop="created" label="下单时间"></el-table-column>
         <el-table-column label="操作">
           <template slot-scope="scope">
             <el-button type="text" @click="doOrderDtl(scope.row)">查看</el-button>

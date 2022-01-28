@@ -1,1 +1,1 @@
-import "./fixed";
+import './fixed'

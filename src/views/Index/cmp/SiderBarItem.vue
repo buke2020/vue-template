@@ -11,7 +11,7 @@
       <i :class="menu.meta.icon"></i>
       <span>{{ menu.meta.title }}</span>
     </template>
-    <sider-bar-item v-for="(submenu, key) in menu.children" :key="key" :menu="submenu"> </sider-bar-item>
+    <sider-bar-item v-for="(submenu, key) in menu.children" :key="key" :menu="submenu"></sider-bar-item>
   </el-submenu>
 </template>
 

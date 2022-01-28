@@ -1,13 +1,7 @@
 <template>
-  <el-menu
-    :unique-opened="false"
-    :default-active="activeMenu"
-    background-color="#242633"
-    text-color="#79879E"
-    active-text-color="#FFFFFF"
-  >
+  <el-menu :unique-opened="false" :default-active="activeMenu" background-color="#242633" text-color="#79879E" active-text-color="#FFFFFF">
     <div v-for="(menu, key) in menus" :key="key">
-      <sider-bar-item :menu="menu"> </sider-bar-item>
+      <sider-bar-item :menu="menu"></sider-bar-item>
     </div>
   </el-menu>
 </template>
