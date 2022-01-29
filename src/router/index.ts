@@ -5,6 +5,7 @@ import 'nprogress/nprogress.css' // 进度条样式
 import list from './modules/list'
 import detail from './modules/detail'
 import form from './modules/form'
+import demo from './modules/demo'
 import store from '@/store'
 NProgress.configure({ showSpinner: false }) // 禁用加载动画
 Vue.use(VueRouter)
@@ -32,7 +33,7 @@ export const constantRoutes: Array<RouteConfig> = [
 ]
 
 // 动态路由
-export const asyncRoutes: Array<RouteConfig> = [...list, ...form, ...detail]
+export const asyncRoutes: Array<RouteConfig> = [...list, ...form, ...detail, ...demo]
 
 const createRouter = () =>
   new VueRouter({

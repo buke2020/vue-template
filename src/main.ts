@@ -3,6 +3,7 @@ import App from './App.vue'
 
 import SvgIcon from 'vue-svgicon'
 import router from './router'
+import './cmd/Directive'
 import '@/assets/icons/components'
 import store from './store'
 import 'element-ui/packages/theme-chalk/src/index.scss'
