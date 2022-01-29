@@ -2,7 +2,7 @@
 
 ## 简介
 
-[vue-template]是一个后台前端解决方案，它基于 [vue](https://github.com/vuejs/vue) 和 [fant-ui](http://github.app.hd123.cn:10080/qianfan/fant-ui)实现,它使用了最新的vue技术栈，内置了Mockjs，axios请求拦截，提炼了典型的业务模型，它可以帮助你快速搭建中后台产品原型。
+[vue-template]是一个中后台解决方案，它基于 [vue](https://github.com/vuejs/vue) 和 [element-ui](https://github.com/ElemeFE/element)实现,它使用了最新的vue技术栈，内置了Mockjs，axios请求拦截，提炼了典型的业务模型，它可以帮助你快速搭建中后台产品原型。
 
 ## 安装依赖
 ```

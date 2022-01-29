@@ -1,5 +1,6 @@
 import { Component, Vue, Prop, Watch } from 'vue-property-decorator'
-import { CommonUtil } from 'fant-ui'
+import CommonUtil from '@/utils/CommonUtil'
+
 // 筛选参数
 class FilterParam {
   // 查询条件运算,格式为“field:<操作符>”

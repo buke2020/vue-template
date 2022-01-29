@@ -16,7 +16,6 @@
       ref="table"
       fit
       highlight-current-row
-      header-row-class-name="list-view-table"
       :data="data"
       :row-key="rowKey"
       :stripe="stripe"
@@ -82,12 +81,6 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-  }
-}
-.list-view-table {
-  background-color: #ffffff;
-  th {
-    background-color: #ffffff;
   }
 }
 </style>

@@ -1,6 +1,6 @@
 import axios from 'axios'
 import store from '../store'
-import { CommonUtil } from 'fant-ui'
+import CommonUtil from '@/utils/CommonUtil'
 
 const qs = require('qs')
 axios.defaults.paramsSerializer = (params) => {

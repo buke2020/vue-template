@@ -2,7 +2,7 @@ import Mock from 'mockjs'
 import BaseResponse from '@/model/common/BaseResponse'
 import ListModel from '@/model/example/ListModel'
 import UserInfo from '@/model/login/UserInfo'
-import { CommonUtil } from 'fant-ui'
+import CommonUtil from '@/utils/CommonUtil'
 
 const Random = Mock.Random
 const baseUrl = process.env.VUE_APP_BASEURL

@@ -67,14 +67,14 @@
 }
 .card-warning {
   border: 1px solid $--color-warning;
-  background-color: $--color-warning-extra-lighter;
+  // background-color: $--color-warning-extra-lighter;
 }
 .card-error {
   border: 1px solid $--color-danger;
-  background-color: $--color-danger-extra-lighter;
+  // background-color: $--color-danger-extra-lighter;
 }
 .card-success {
   border: 1px solid $--color-success;
-  background-color: $--color-success-extra-lighter;
+  // background-color: $--color-success-extra-lighter;
 }
 </style>
