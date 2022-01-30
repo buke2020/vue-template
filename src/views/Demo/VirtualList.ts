@@ -7,9 +7,9 @@ import PageWrapper from '@/components/page-wrapper/PageWrapper.vue'
 export default class VirtualList extends Vue {
   sumItemList: any[] = [] // 数据项列表（总的）
   itemList: any[] = [] // 数据项列表（界面展示）
-  lazyValue: string = '' // 选中的数据
-  rangeNum: number = 8 // 每次下拉加载条数
-
+  virtualValue: string = '' // 选中的数据
+  scrollbarDom: any // 滚动条dom
+  itemDom: any // 数据项dom
   $refs: any
 
   created() {
@@ -18,11 +18,38 @@ export default class VirtualList extends Vue {
     }
   }
 
+  mounted() {
+    this.init()
+  }
+
   /**
-   * 下拉加载（懒加载）
+   * 初始化
    */
-  loadmore(n: number) {
-    return () => (this.rangeNum += n)
+  init() {
+    this.itemList = this.sumItemList.slice(0, 8) // 一开始默认8条数据
+    const dom = document.querySelector('.el-select-dropdown .el-select-dropdown__wrap') as any
+    const boxDom = document.querySelector('.el-select-dropdown__wrap') as any
+    boxDom.style.display = 'flex'
+    boxDom.style.flexDirection = 'row'
+
+    this.itemDom = dom.querySelector('.el-select-dropdown__wrap .el-select-dropdown__list')
+    this.addScrollDiv(boxDom) // 添加一个滚动div
+
+    boxDom.addEventListener('scroll', () => {
+      this.scrollbarDom.style.height = (this.sumItemList.length + 1) * 34 + 'px'
+      this.itemDom.style.paddingTop = dom.scrollTop + 'px'
+      const start = Math.floor(dom.scrollTop / 34)
+      this.itemList = this.sumItemList.slice(start, start + 7)
+    })
+  }
+
+  /**
+   * 添加一个div
+   */
+  addScrollDiv(dom: any) {
+    this.scrollbarDom = document.createElement('div')
+    this.scrollbarDom.style.width = 0
+    dom.insertBefore(this.scrollbarDom, this.itemDom)
   }
 
   /**
@@ -36,15 +63,6 @@ export default class VirtualList extends Vue {
       this.itemList = filterList
     } else {
       this.itemList = this.sumItemList
-    }
-  }
-
-  /**
-   * 下拉触发
-   */
-  visibleChange(flag: boolean) {
-    if (flag) {
-      this.filterMethod()
     }
   }
 }
