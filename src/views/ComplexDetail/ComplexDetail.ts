@@ -1,10 +1,9 @@
 import { Component, Vue } from 'vue-property-decorator'
-import PageWrapper from '@/components/page-wrapper/PageWrapper.vue'
 import ExampleApi from '@/http/example/ExampleApi'
 import ListModel from '@/model/example/ListModel'
 
 @Component({
-  components: { PageWrapper }
+  components: {}
 })
 export default class ComplexDetail extends Vue {
   skuDataList: ListModel[] = []

@@ -8,6 +8,8 @@ import '@/assets/icons/components'
 import store from './store'
 import 'element-ui/packages/theme-chalk/src/index.scss'
 import ElementUI from 'element-ui'
+import PageWrapper from './components/page-wrapper/PageWrapper.vue'
+Vue.component('PageWrapper', PageWrapper)
 
 import '@/assets/iconfont/iconfont.css'
 

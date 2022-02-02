@@ -1,10 +1,9 @@
 import { Component, Vue } from 'vue-property-decorator'
-import PageWrapper from '@/components/page-wrapper/PageWrapper.vue'
 import ListView from '@/components/list-view/ListView.vue'
 import DetailCard from '@/components/detail-card/DetailCard.vue'
 
 @Component({
-  components: { PageWrapper, DetailCard, ListView }
+  components: { DetailCard, ListView }
 })
 export default class BasicDetail extends Vue {
   /**

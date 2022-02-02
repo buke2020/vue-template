@@ -1,9 +1,8 @@
 import { Component, Vue, Watch } from 'vue-property-decorator'
-import PageWrapper from '@/components/page-wrapper/PageWrapper.vue'
 import { abnormalType, hintTitle, hintDescribe } from '@/model/example/AbnormalType'
 
 @Component({
-  components: { PageWrapper }
+  components: {}
 })
 export default class Abnormal extends Vue {
   status: string = ''

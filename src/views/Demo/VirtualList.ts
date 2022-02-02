@@ -1,8 +1,7 @@
 import { Component, Vue } from 'vue-property-decorator'
-import PageWrapper from '@/components/page-wrapper/PageWrapper.vue'
 
 @Component({
-  components: { PageWrapper }
+  components: {}
 })
 export default class VirtualList extends Vue {
   sumItemList: any[] = [] // 数据项列表（总的）

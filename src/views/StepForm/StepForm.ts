@@ -1,6 +1,4 @@
 import { Component, Vue } from 'vue-property-decorator'
-import PageWrapper from '@/components/page-wrapper/PageWrapper.vue'
-
 import ListView from '@/components/list-view/ListView.vue'
 import DetailCard from '@/components/detail-card/DetailCard.vue'
 import Step1 from './cmp/Step1.vue'
@@ -9,15 +7,7 @@ import Step3 from './cmp/Step3.vue'
 import Step4 from './cmp/Step4.vue'
 
 @Component({
-  components: {
-    PageWrapper,
-    DetailCard,
-    ListView,
-    Step1,
-    Step2,
-    Step3,
-    Step4
-  }
+  components: { DetailCard, ListView, Step1, Step2, Step3, Step4 }
 })
 export default class StepForm extends Vue {
   active: number = 1 // 激活状态的步骤
