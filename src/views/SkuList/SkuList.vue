@@ -16,10 +16,9 @@
       <!-- 页眉标题 结束 -->
 
       <!-- 页眉按钮组（按钮为一个时，可以不用div包裹） 开始 -->
-      <div>
-        <el-button type="primary" size="medium">+新建</el-button>
-        <!-- <el-button type="primary" size="medium">代客下单</el-button> -->
-      </div>
+
+      <el-button type="primary" size="medium" @click="doSkuAdd">添加商品</el-button>
+
       <!-- 页眉按钮组 结束 -->
     </template>
     <!-- 列表页眉 结束 -->
@@ -72,7 +71,7 @@
 
     <!-- 列表主体表格 开始 -->
     <template slot="body">
-      <list-view ref="orderDataList" :selectable="true" :data="orderDataList" :total="orderTotal" @load="doListLoad">
+      <list-view ref="list" :selectable="true" :data="orderDataList" :total="orderTotal" row-key="uuid" @load="doListLoad">
         <template slot="actions">
           <div class="operation">
             <el-button size="small">批量删除</el-button>

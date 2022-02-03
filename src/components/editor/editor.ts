@@ -7,7 +7,7 @@ import E from 'wangeditor'
 export default class DetailView extends Vue {
   editor: any = null
   info_: Nullable<string> = null
-  @Model('change', { type: String, default: 0 }) value!: string
+  @Model('change', { type: String, default: '' }) value!: string
   @Prop({ type: Boolean, default: false }) isClear: boolean
   @Watch('isClear', { immediate: true })
   clear(newVal: any, oldVal: any) {

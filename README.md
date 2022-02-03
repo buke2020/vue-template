@@ -1,4 +1,4 @@
-# A Template Based On Fant
+# A Template Based On Vue
 
 ## 简介
 

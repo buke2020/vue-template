@@ -4,6 +4,8 @@ import QueryCondition from '@/components/query-condition/QueryCondition.vue'
 import ListView from '@/components/list-view/ListView.vue'
 import ExampleApi from '@/http/example/ExampleApi'
 import ListModel from '@/model/example/ListModel'
+import Dialog from '@/components/dialog/Dialog'
+import SkuSelectDialog from '@/components/sku-select/SkuSelectDialog.vue'
 
 @Component({
   components: { BasicLayout, QueryCondition, ListView }
@@ -12,10 +14,12 @@ export default class SkuList extends Vue {
   applyDate: string = '' // 申请日期
   orderDataList: ListModel[] = [] // 订单列表
   orderTotal: number = 0 // 单据总数
+  $refs: any
 
   mounted() {
     this.doSearch()
   }
+
   /**
    * 搜索按钮点击事件
    */
@@ -50,5 +54,16 @@ export default class SkuList extends Vue {
    */
   doOrderDtl(row: ListModel) {
     this.$router.push('/basicDetail')
+  }
+
+  /**
+   * 添加商品
+   */
+  doSkuAdd() {
+    new Dialog(SkuSelectDialog, {
+      onConfirm: () => {
+        this.$refs.list.reset()
+      }
+    }).show()
   }
 }

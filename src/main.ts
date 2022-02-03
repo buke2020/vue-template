@@ -9,7 +9,9 @@ import store from './store'
 import 'element-ui/packages/theme-chalk/src/index.scss'
 import ElementUI from 'element-ui'
 import PageWrapper from './components/page-wrapper/PageWrapper.vue'
+import ListView from './components/list-view/ListView.vue'
 Vue.component('PageWrapper', PageWrapper)
+Vue.component('ListView', ListView)
 
 import '@/assets/iconfont/iconfont.css'
 
