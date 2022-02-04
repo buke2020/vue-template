@@ -10,6 +10,11 @@ const routes: Array<RouteConfig> = [
     path: '/virtualList',
     name: 'VirtualList',
     component: () => import('@/views/Demo/VirtualList.vue')
+  },
+  {
+    path: '/chart',
+    name: 'Chart',
+    component: () => import('@/views/Demo/Chart.vue')
   }
 ]
 
