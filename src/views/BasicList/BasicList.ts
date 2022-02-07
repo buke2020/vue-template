@@ -1,12 +1,11 @@
 import { Component, Vue } from 'vue-property-decorator'
 import BasicLayout from '@/layouts/BasicLayoutSingle/BasicLayout.vue'
 import QueryCondition from '@/components/query-condition/QueryCondition.vue'
-import ListView from '@/components/list-view/ListView.vue'
 import ExampleApi from '@/http/example/ExampleApi'
 import ListModel from '@/model/example/ListModel'
 
 @Component({
-  components: { BasicLayout, QueryCondition, ListView }
+  components: { BasicLayout, QueryCondition }
 })
 export default class BasicList extends Vue {
   $refs: any

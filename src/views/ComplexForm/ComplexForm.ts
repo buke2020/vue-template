@@ -1,10 +1,8 @@
 import { Component, Vue } from 'vue-property-decorator'
-import ListView from '@/components/list-view/ListView.vue'
-import DetailCard from '@/components/detail-card/DetailCard.vue'
 import Editor from '@/components/editor/editor.vue'
 
 @Component({
-  components: { DetailCard, ListView, Editor }
+  components: { Editor }
 })
 export default class ComplexForm extends Vue {
   imageUrl: string = '' // 图片地址

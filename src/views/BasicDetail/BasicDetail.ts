@@ -1,9 +1,7 @@
 import { Component, Vue } from 'vue-property-decorator'
-import ListView from '@/components/list-view/ListView.vue'
-import DetailCard from '@/components/detail-card/DetailCard.vue'
 
 @Component({
-  components: { DetailCard, ListView }
+  components: {}
 })
 export default class BasicDetail extends Vue {
   /**

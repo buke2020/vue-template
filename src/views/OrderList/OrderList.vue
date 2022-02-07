@@ -1,6 +1,6 @@
 <template>
   <div>
-    <page-wrapper style="margin-bottom:20px">
+    <page-wrapper>
       <template slot="header">
         <span>订单列表</span>
         <div>

@@ -1,11 +1,10 @@
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator'
 import ConstantMgr from '@/mgr/ConstantMgr'
-import DetailCard from '../detail-card/DetailCard.vue'
 import QueryParam from '@/model/common/QueryParam'
 import ExampleApi from '@/http/example/ExampleApi'
 
 @Component({
-  components: { DetailCard },
+  components: {},
   filters: {
     empty: (value: string) => {
       return value || '--'
