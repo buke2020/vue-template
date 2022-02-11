@@ -27,21 +27,9 @@
     <!-- 列表查询条件 开始 -->
     <template slot="query">
       <query-condition @search="doSearch" @reset="doReset">
-        <template>
-          <el-col :xs="{ span: 24 }" :sm="{ span: 24 }" :md="{ span: 12 }" :lg="{ span: 8 }" :xl="{ span: 6 }">
-            <el-date-picker type="date" ref="applyDate" v-model="applyDate" value-format="yyyy-MM-dd" placeholder="申请时间"></el-date-picker>
-          </el-col>
-          <el-col :xs="{ span: 24 }" :sm="{ span: 24 }" :md="{ span: 12 }" :lg="{ span: 8 }" :xl="{ span: 6 }">
-            <el-time-picker
-              style="width:200px"
-              v-model="applyDate"
-              :picker-options="{
-                selectableRange: '18:30:00 - 20:30:00'
-              }"
-              placeholder="任意时间点"
-            ></el-time-picker>
-          </el-col>
-        </template>
+        <el-col :span="16">
+          <fast-date-picker v-model="applyDate"></fast-date-picker>
+        </el-col>
       </query-condition>
     </template>
     <!-- 列表查询条件 结束 -->

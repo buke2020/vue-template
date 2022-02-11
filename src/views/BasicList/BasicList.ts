@@ -3,26 +3,28 @@ import BasicLayout from '@/layouts/BasicLayoutSingle/BasicLayout.vue'
 import QueryCondition from '@/components/query-condition/QueryCondition.vue'
 import ExampleApi from '@/http/example/ExampleApi'
 import ListModel from '@/model/example/ListModel'
+import FastDatePicker from '@/components/fast-date-picker/FastDatePicker.vue'
 
 @Component({
-  components: { BasicLayout, QueryCondition }
+  components: { BasicLayout, QueryCondition, FastDatePicker }
 })
 export default class BasicList extends Vue {
-  $refs: any
-  applyDate: string = '' // 申请日期
+  applyDate: string[] = [] // 申请日期
   orderDataList: ListModel[] = [] // 订单列表
   orderTotal: number = 0 // 单据总数
   loading: boolean = true // 数据是否正在加载
+  $refs: any
 
   mounted() {
     this.doSearch()
   }
+
   /**
    * 搜索按钮点击事件
    */
   doSearch() {
     this.loading = true
-    ExampleApi.getList(this.applyDate)
+    ExampleApi.getList(this.applyDate[0])
       .then((resp) => {
         this.loading = false
         this.orderDataList = resp.data
@@ -51,7 +53,7 @@ export default class BasicList extends Vue {
           type: 'info',
           message: `action: ${action}`
         })
-        this.applyDate = ''
+        this.applyDate = []
         this.$refs.orderDataList.reset()
       }
     })
