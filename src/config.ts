@@ -1,21 +1,18 @@
 const dev = {
-  SERVICE_URL: 'https://wholesale-test.hd123.com/',
-  TENANT: 'ldjtest',
-  APP_ID: 'wholesaleweb',
-  SHOP: '8888888'
+  SERVICE_URL: 'https://test.123.com/',
+  TENANT: 'test',
+  APP_ID: 'web'
 }
 const uat = {
-  SERVICE_URL: 'https://wholesale-uat.hd123.com/',
-  TENANT: 'ldjuat',
-  APP_ID: 'wholesaleweb',
-  SHOP: '8888888'
+  SERVICE_URL: 'https://uat.123.com/',
+  TENANT: 'uat',
+  APP_ID: 'web'
 }
 
 const production = {
   SERVICE_URL: '',
   TENANT: '',
-  APP_ID: '',
-  SHOP: ''
+  APP_ID: ''
 }
 
 let config = dev

@@ -3,10 +3,7 @@
   <basic-layout>
     <!-- 页面header 开始 -->
     <template slot="header">
-      <div class="header-left">
-        <img src="@/assets/img/pic_logo.png" class="header-left-logo" />
-        <span>Vue Admin</span>
-      </div>
+      <div class="header-left">Admin</div>
       <el-dropdown class="header-right" trigger="click" @command="doLogout">
         <div class="user-name">
           <img src="@/assets/img/common/ic_portrait@2x.png" class="user-name-icon" />

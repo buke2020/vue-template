@@ -1,9 +1,12 @@
 import { Component, Vue } from 'vue-property-decorator'
+import { debounce } from 'ts-debounce'
 
 @Component({
   components: {}
 })
 export default class BasicForm extends Vue {
+  debounceSubmit = debounce(this.doSubmit, 300) // 300ms后执行
+
   form = {
     // form表单绑定的内容
     code: '', // 门店code
@@ -44,6 +47,14 @@ export default class BasicForm extends Vue {
     type: [{ required: true, message: '请选择门店类型', trigger: 'blur' }],
     address: [{ required: false, message: '请选择门店地址', trigger: 'blur' }]
   }
+
+  /**
+   * 提价
+   */
+  doSubmit() {
+    //
+  }
+
   /**
    * 后退
    */

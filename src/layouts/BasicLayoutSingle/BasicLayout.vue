@@ -1,9 +1,7 @@
 <template>
   <div class="basic-layout">
     <div class="basic-layout-sider">
-      <div class="logo">
-        <img class="logo-img" src="@/assets/img/pic_logo.png" alt="logo" />
-      </div>
+      <div class="logo">Vue Template</div>
       <slot name="sider"></slot>
     </div>
     <div class="basic-layout-container">
@@ -36,10 +34,12 @@
     overflow-y: auto;
     .logo {
       display: flex;
+      justify-content: center;
       align-items: center;
       width: 200px;
       height: 60px;
       padding: 26px;
+      color: white;
       box-sizing: border-box;
       .logo-img {
         width: 86px;
