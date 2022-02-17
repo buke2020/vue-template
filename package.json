@@ -8,7 +8,19 @@
     "production": "vue-cli-service build --mode production",
     "serve": "vue-cli-service serve",
     "lint": "vue-cli-service lint",
+    "prepare": "husky install",
+    "commit": "git-cz",
+    "release-major": "standard-version --release-as major",
+    "release-minor": "standard-version --release-as minor",
+    "release-patch": "standard-version --release-as patch",
+    "release": "standard-version",
+    "prerelease": "standard-version --prerelease",
     "svg": "vsvg -s ./src/assets/icons/svg -t ./src/assets/icons/components --ext ts --es6"
+  },
+  "config": {
+    "commitizen": {
+      "path": "git-cz"
+    }
   },
   "dependencies": {
     "@types/nprogress": "^0.2.0",
@@ -51,15 +63,20 @@
     "sass-loader": "^9.0.3",
     "typescript": "^4.2.4",
     "vue-template-compiler": "^2.6.12",
-    "webpack-bundle-analyzer": "^4.4.1"
+    "webpack-bundle-analyzer": "^4.4.1",
+    "commitizen": "^4.2.4",
+    "@commitlint/cli": "^15.0.0",
+    "@commitlint/config-conventional": "^15.0.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "git-cz": "^4.8.0",
+    "husky": "^7.0.4",
+    "lint-staged": "11.2.6",
+    "standard-version": "^9.3.2"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
-    "*.{js,jsx,vue,ts,tsx}": [
-      "vue-cli-service lint",
-      "git add"
-    ]
+    "*.{js,vue,ts}": "vue-cli-service lint"
   }
 }
