@@ -15,6 +15,11 @@ const routes: Array<RouteConfig> = [
     path: '/chart',
     name: 'Chart',
     component: () => import('@/views/Demo/Chart.vue')
+  },
+  {
+    path: '/dragable',
+    name: 'Dragable',
+    component: () => import('@/views/Demo/Dragable.vue')
   }
 ]
 
