@@ -2,6 +2,7 @@
   <page-wrapper>
     <template slot="body">
       <div ref="chart" class="chart"></div>
+      <canvas id="qrcode"></canvas>
     </template>
   </page-wrapper>
 </template>

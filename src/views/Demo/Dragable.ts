@@ -15,7 +15,7 @@ export default class Dragable extends Vue {
   $refs: any
 
   created() {
-    for (let i = 1001; i < 1010; i++) {
+    for (let i = 1001; i <= 1024; i++) {
       this.rowList.push({ code: i, name: `数据项${i}` })
       this.columnList.push({ id: i, code: `代码${i}`, name: `数据项${i}` })
     }
@@ -24,12 +24,13 @@ export default class Dragable extends Vue {
   }
 
   mounted() {
-    this.rowDrop() // 开启行拖拽
-    // this.columnDrop() // 开启列拖拽
+    // this.rowDrop() // 开启行拖拽
+    this.columnDrop() // 开启列拖拽
   }
 
   beforeDestroy() {
-    this.rowTable.destroy() // 销毁排序table
+    this.rowTable.destroy() // 销毁行排序table
+    this.columnTable.destroy() // 销毁列排序table
   }
 
   /**
@@ -53,13 +54,12 @@ export default class Dragable extends Vue {
    * 列拖拽事件
    */
   columnDrop() {
-    const tbody = document.querySelector('.el-table__body-wrapper tbody')
+    const tbody = document.getElementById('column')
     // eslint-disable-next-line @typescript-eslint/no-this-alias
     const self = this
     self.columnTable = Sortable.create(tbody, {
       animation: 150, // 拖拽延时
       onEnd(val: any) {
-        console.log(val, 10001)
         const curColumn = self.columnSortList.splice(val.oldIndex, 1)[0]
         self.columnSortList.splice(val.newIndex, 0, curColumn)
       }

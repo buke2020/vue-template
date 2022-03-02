@@ -9,6 +9,7 @@ export default class Chart extends Vue {
 
   mounted() {
     this.init()
+    this.qrcode()
   }
 
   /**
@@ -35,5 +36,15 @@ export default class Chart extends Vue {
     }
 
     option && myChart.setOption(option)
+  }
+
+  /**
+   * 生成二维码
+   */
+  qrcode() {
+    const QRCode = require('qrcode')
+    const canvas = document.getElementById('qrcode')
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    QRCode.toCanvas(canvas, '1000001', { width: 180, height: 180 }, () => {})
   }
 }

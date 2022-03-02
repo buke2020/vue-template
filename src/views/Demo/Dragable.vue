@@ -15,14 +15,30 @@
     <page-wrapper>
       <template slot="header">列拖拽</template>
       <template slot="body">
-        <el-table key="column" :data="columnList">
-          <el-table-column prop="id" label="ID" show-overflow-tooltip></el-table-column>
-          <el-table-column prop="name" label="名称" show-overflow-tooltip></el-table-column>
-          <el-table-column prop="code" label="代码" show-overflow-tooltip></el-table-column>
-        </el-table>
+        <div id="column" class="flex-start">
+          <div v-for="item in columnList" :key="item.id" class="circle">{{ item.name | empty }}</div>
+        </div>
       </template>
     </page-wrapper>
   </div>
 </template>
 
 <script lang="ts" src="./Dragable.ts"></script>
+
+<style lang="scss" scoped>
+.flex-start {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  margin: 12px;
+  border: 1px solid #f7f7f7;
+  border-radius: 8px;
+}
+</style>
