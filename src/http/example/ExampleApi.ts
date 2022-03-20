@@ -16,6 +16,7 @@ export default class ExampleApi {
         return res.data
       })
   }
+
   /**
    * 查询单据列表
    */
@@ -26,6 +27,7 @@ export default class ExampleApi {
         return res.data
       })
   }
+
   /**
    * 查询商品单据列表
    */
@@ -53,6 +55,17 @@ export default class ExampleApi {
           type: type
         }
       })
+      .then((res) => {
+        return res.data
+      })
+  }
+
+  /**
+   * 查询权限树
+   */
+  static getTree(applyDate: string): Promise<BaseResponse<ListModel[]>> {
+    return ApiClient.server()
+      .post('/example/getTreeList', { applyDate: applyDate }, {})
       .then((res) => {
         return res.data
       })

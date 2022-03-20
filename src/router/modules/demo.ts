@@ -20,6 +20,11 @@ const routes: Array<RouteConfig> = [
     path: '/dragable',
     name: 'Dragable',
     component: () => import('@/views/Demo/Dragable.vue')
+  },
+  {
+    path: '/test',
+    name: 'Test',
+    component: () => import('@/views/Demo/Test.vue')
   }
 ]
 
